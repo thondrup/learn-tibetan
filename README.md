@@ -1,4 +1,6 @@
-# preact material app
+# Learn Tibetan
+
+Build using the material template for preact-cli
 
 Super performant `Material` app for preact world using [preact-material-components](https://github.com/prateekbh/preact-material-components)
 
