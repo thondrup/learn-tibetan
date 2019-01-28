@@ -1,0 +1,17 @@
+.home {
+	padding: 20px;
+	min-height: 100%;
+	width: 100%;
+}
+
+.cardBody {
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.cardActions {
+	display: flex;
+	justify-content: space-between; 
+}
