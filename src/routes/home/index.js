@@ -4,6 +4,7 @@ import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Button/style.css';
 import { entries } from 'tibetan-alphabet';
 import Character from '../../components/character';
+import Player from '../../components/Player';
 import style from './style';
 
 export default class Home extends Component {
@@ -55,8 +56,9 @@ export default class Home extends Component {
 						</div>
 					</div>
 					<Card.Actions class={style.cardActions}>
-						<Card.ActionButton disabled={this.state.index === 0} onclick={this.previous}>Previous</Card.ActionButton>
-						<Card.ActionButton disabled={this.state.index === this.state.pool.length - 1} onclick={this.next}>Next</Card.ActionButton>
+						<Card.ActionButton disabled={index === 0} onclick={this.previous}>Prev</Card.ActionButton>
+						<Player src={`./assets/audio/alphabet/row${character.row}-col${character.col}.m4a`} />
+						<Card.ActionButton disabled={index === pool.length - 1} onclick={this.next}>Next</Card.ActionButton>
 					</Card.Actions>
 				</Card>
 			</div>
