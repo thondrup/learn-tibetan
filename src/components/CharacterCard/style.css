@@ -1,0 +1,10 @@
+.cardBody {
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.cardActions {
+	display: flex;
+	justify-content: space-between; 
+}

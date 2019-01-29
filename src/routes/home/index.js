@@ -1,21 +1,13 @@
 import { h, Component } from 'preact';
-import Card from 'preact-material-components/Card';
-import 'preact-material-components/Card/style.css';
-import 'preact-material-components/Button/style.css';
+import CharacterCard from '../../components/CharacterCard';
 import { entries } from 'tibetan-alphabet';
-import Character from '../../components/character';
-import Player from '../../components/Player';
 import style from './style';
 
 export default class Home extends Component {
 	constructor() {
 		super();
-		const allCharacters = this.getPool()
-
 		this.state = {
-			index: 0,
-			pool: allCharacters,
-			character: allCharacters[0]
+			pool: this.getPool()
 		};
 	}
 
@@ -23,44 +15,10 @@ export default class Home extends Component {
 		return entries();
 	}
 
-	previous = () => {
-		if(this.state.index === 0) {
-			return;
-		}
-
-		this.setState(prev => ({
-			index: (prev.index - 1),
-			character: (prev.pool[prev.index - 1])
-		}));
-	}
-
-	next = () => {
-		if(this.state.index === this.state.pool.length - 1) {
-			return;
-		}
-
-		this.setState(prev => ({
-			index: (prev.index + 1),
-			character: (prev.pool[prev.index + 1])
-		}));
-	}
-
-	render({}, { character, index, pool }) {
+	render({}, { pool }) {
 		return (
 			<div class={`${style.home} page`}>
-				<Card>
-					<div class={style.cardBody}>
-						<Character character={character} />
-						<div>
-							{index + 1} of {pool.length}
-						</div>
-					</div>
-					<Card.Actions class={style.cardActions}>
-						<Card.ActionButton disabled={index === 0} onclick={this.previous}>Prev</Card.ActionButton>
-						<Player src={`./assets/audio/alphabet/row${character.row}-col${character.col}.m4a`} />
-						<Card.ActionButton disabled={index === pool.length - 1} onclick={this.next}>Next</Card.ActionButton>
-					</Card.Actions>
-				</Card>
+				<CharacterCard pool={pool} />
 			</div>
 		);
 	}
