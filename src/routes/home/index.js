@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import CharacterCard from '../../components/CharacterCard';
-import { entries } from 'tibetan-alphabet';
+import { entries, entry, row, col } from 'tibetan-alphabet';
 import style from './style';
 
 export default class Home extends Component {
@@ -18,6 +18,7 @@ export default class Home extends Component {
 	render({}, { pool }) {
 		return (
 			<div class={`${style.home} page`}>
+				<h2>All 30 Tibetan consonants</h2>
 				<CharacterCard pool={pool} />
 			</div>
 		);
