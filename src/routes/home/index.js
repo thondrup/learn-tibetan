@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import CharacterCard from '../../components/CharacterCard';
-import { entries, entry, row, col } from 'tibetan-alphabet';
+import { entries } from 'tibetan-alphabet';
 import style from './style';
 
 export default class Home extends Component {
