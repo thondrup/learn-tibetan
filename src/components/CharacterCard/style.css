@@ -8,3 +8,6 @@
 	display: flex;
 	justify-content: space-between; 
 }
+.characterStyle {
+	font-size: 10em;
+}

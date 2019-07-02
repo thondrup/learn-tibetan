@@ -3,3 +3,17 @@
 	min-height: 100%;
 	width: 100%;
 }
+.consonants {
+  display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.btnWrapper {
+	display: flex;
+	justify-content: center;
+}
+.text {
+	display: flex;
+	justify-content: center;
+	line-height: 1.5em;
+}

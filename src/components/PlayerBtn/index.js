@@ -4,9 +4,9 @@ import Icon from 'preact-material-components/Icon';
 import 'preact-material-components/Button/style.css';
 import style from './style';
 
-export default class Player extends Component {
-  constructor() {
-    super();
+export default class PlayerBtn extends Component {
+  constructor(props) {
+    super(props);
     this.state.isPlaying = false;
   }
 
@@ -42,7 +42,7 @@ export default class Player extends Component {
 
   render({src}, {isPlaying}) {
     return (
-      <Button raised ripple onClick={this.togglePlay.bind(this)}> 
+      <Button class={style.btn} raised ripple onClick={this.togglePlay.bind(this)}> 
         <Icon class={style.player} 
           ref={(progress) => { this.progress = progress }}>
           {isPlaying ? 'stop' : 'play_arrow'}

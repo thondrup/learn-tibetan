@@ -1,10 +1,9 @@
 import { h, Component } from 'preact';
-import style from './style';
 
 export default class Character extends Component {
-	render({character}) {
+	render({character, characterStyle}) {
 		return (
-			<div class={style.character}>
+			<div class={characterStyle}>
         {character.text}
 			</div>
 		);
