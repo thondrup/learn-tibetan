@@ -6,8 +6,11 @@
 }
 .cardActions {
 	display: flex;
-	justify-content: space-between; 
+	justify-content: center; 
 }
 .characterStyle {
 	font-size: 10em;
+}
+.navBtn {
+	margin: 0 10px !important;
 }

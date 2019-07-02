@@ -9,7 +9,8 @@ export default class Training extends Component {
 	constructor() {
 		super();
 		this.state = {
-			pool: []
+			pool: [],
+			randomSize: 15
 		};
 	}
 
@@ -21,9 +22,7 @@ export default class Training extends Component {
 		const items = entries();
 		const randomCharacters = [];
 
-		const size = 15;
-		let i = 0;
-		for(i; i<size; i++) {
+		for(let i = 0; i < this.state.randomSize; i++) {
 			const randomCharacter = this.getRandomItem(items);
 			randomCharacters.push(randomCharacter);
 		}
@@ -37,7 +36,7 @@ export default class Training extends Component {
 		return items[Math.floor(Math.random() * (items.length -1))];
 	}
 
-	render({}, { pool }) {
+	render() {
 		return (
 			<div class={`${style.consonants} page`}>
 				<div class={style.content}>
@@ -50,7 +49,12 @@ export default class Training extends Component {
 					<p class={style.text}>
 						See if you can pronounce these randomly chosen consonants.
 					</p>
-					<CharacterCard pool={pool} />
+					<CharacterCard pool={this.state.pool} />
+					<div class={style.btnWrapper}>
+						<Button class={style.btn} raised ripple onClick={this.setRandom}> 
+							Randomize
+						</Button>
+					</div>
 				</div>
 			</div>
 		);
