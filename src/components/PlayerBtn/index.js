@@ -32,6 +32,10 @@ export default class PlayerBtn extends Component {
     this.audio.onpause = () => {
       this.setState({isPlaying: false});
     };
+
+    this.audio.onended = () => {
+      this.props.onEnded();
+    };
   }
 
   componentDidMount() {

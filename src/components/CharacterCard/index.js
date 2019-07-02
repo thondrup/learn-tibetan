@@ -40,6 +40,10 @@ export default class CharacterCard extends Component {
 		}));
 	}
 
+	audioEnded = () => {
+		this.next();
+	}
+
 	render({pool}, {index}) {
 		return (
       <Card>
@@ -51,7 +55,7 @@ export default class CharacterCard extends Component {
         </div>
         <Card.Actions class={style.cardActions}>
           <Card.ActionButton disabled={index === 0} class={style.navBtn} onclick={this.previous}>Prev</Card.ActionButton>
-          <PlayerBtn src={`./assets/audio/alphabet/row${pool[index].row}-col${pool[index].col}.m4a`} />
+          <PlayerBtn src={`./assets/audio/alphabet/row${pool[index].row}-col${pool[index].col}.m4a`} onEnded={this.audioEnded} />
           <Card.ActionButton disabled={index === pool.length - 1} class={style.navBtn} onclick={this.next}>Next</Card.ActionButton>
         </Card.Actions>
       </Card>
