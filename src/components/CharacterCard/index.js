@@ -49,8 +49,8 @@ export default class CharacterCard extends Component {
       <Card>
         <div class={style.cardBody}>
           <Character character={pool[index]} characterStyle={style.characterStyle} />
-          <div>
-            {index + 1} of {pool.length}
+          <div class={style.count}>
+            {index + 1} / {pool.length}
           </div>
         </div>
         <Card.Actions class={style.cardActions}>
