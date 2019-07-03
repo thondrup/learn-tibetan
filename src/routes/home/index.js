@@ -14,13 +14,15 @@ export default class Home extends Component {
 		return (
 			<div class={`${style.home} page`}>
 				<h2>The Thirty Consonants</h2>
-				<p class={style.text} >
+				<p class={style.text}>
+					The Tibetan alphabet has thirty consonants and are traditionally a good place to start learning Tibetan.
 					The consonants are arranged in rows and columns. Traditionally they are read by row, left to right and top to bottom.
+					Click on the consonants and listen to the pronunciation.
 				</p>
 				<Consonants consonantsStyle={style.consonants}/>
 				
 				<p class={style.text} >
-					Train you memory by trying to recognize 15 random consonants. 
+					Train your memory by trying to recognize random consonants. 
 				</p>
 				<div class={style.btnWrapper}>
 					<Link href="/training">
