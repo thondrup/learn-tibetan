@@ -1,6 +1,5 @@
 import { h, Component } from 'preact';
 import Button from 'preact-material-components/Button';
-import { Link } from 'preact-router';
 import CharacterCard from '../../components/CharacterCard';
 import { entries } from 'tibetan-alphabet';
 import style from './style';
@@ -40,11 +39,6 @@ export default class Training extends Component {
 		return (
 			<div class={`${style.consonants} page`}>
 				<div class={style.content}>
-					<Link href="/">
-						<Button class={style.btn} raised ripple> 
-							Back
-						</Button>
-					</Link>
 					<h2>Random consonants</h2>
 					<p class={style.text}>
 						See if you can pronounce these randomly chosen consonants.
