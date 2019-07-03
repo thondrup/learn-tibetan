@@ -18,21 +18,22 @@ export default class Training extends Component {
 	}
 
 	setRandom = () => {
-		const items = entries();
-		const randomCharacters = [];
+		let items = entries();
+		const randomCharacterSet = [];
 
 		for(let i = 0; i < this.state.randomSize; i++) {
-			const randomCharacter = this.getRandomItem(items);
-			randomCharacters.push(randomCharacter);
+			const index = this.getRandomIndex(items);
+			randomCharacterSet.push(items[index]);
+			items = items.filter((value, i) => index !== i);
 		}
 
 		this.setState({
-			pool: randomCharacters
+			pool: randomCharacterSet
 		})
 	}
 
-	getRandomItem = (items) => {
-		return items[Math.floor(Math.random() * (items.length -1))];
+	getRandomIndex = (items) => {
+		return Math.floor(Math.random() * (items.length - 1));
 	}
 
 	render() {
@@ -41,7 +42,7 @@ export default class Training extends Component {
 				<div class={style.content}>
 					<h2>Random consonants</h2>
 					<p class={style.text}>
-						Below are 15 randomly chosen consonants. Try to pronounce the consonant you see, 
+						Below is a set of 15 randomly chosen consonants. Try to pronounce the consonant you see, 
 						then click the play button to hear the correct pronunciation. The next consonant will 
 						then automatically appear. You may at any time click the randomize button to get
 						a new set of random consonants.
