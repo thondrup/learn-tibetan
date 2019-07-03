@@ -11,6 +11,7 @@ export default class Consonants extends Component {
 	render({consonantsStyle}) {
 		return (
 			<div class={consonantsStyle}>
+				<div class={style.table}>
 				{ 
 					row([1,2,3,4,5,6,7,8]).map(r => 
 						<p class={style.row}>
@@ -26,6 +27,7 @@ export default class Consonants extends Component {
 						</p>
 					)
 				}
+				</div>
 			</div>
 		);
 	}
