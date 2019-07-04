@@ -1,6 +1,5 @@
 import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
-import Swipe from 'react-easy-swipe';
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Button/style.css';
 import Character from '../../components/Character';
@@ -47,21 +46,19 @@ export default class CharacterCard extends Component {
 
 	render({pool}, {index}) {
 		return (
-			<Swipe allowMouseEvents={true} onSwipeLeft={this.next} onSwipeRight={this.previous}>
-				<Card>
-					<div class={style.cardBody}>
-						<Character character={pool[index]} characterStyle={style.characterStyle} />
-						<div class={style.count}>
-							{index + 1} / {pool.length}
-						</div>
+			<Card>
+				<div class={style.cardBody}>
+					<Character character={pool[index]} characterStyle={style.characterStyle} />
+					<div class={style.count}>
+						{index + 1} / {pool.length}
 					</div>
-					<Card.Actions class={style.cardActions}>
-						<Card.ActionButton disabled={index === 0} class={style.navBtn} onclick={this.previous}>Prev</Card.ActionButton>
-						<PlayerBtn src={`./assets/audio/alphabet/row${pool[index].row}-col${pool[index].col}.m4a`} onEnded={this.audioEnded} />
-						<Card.ActionButton disabled={index === pool.length - 1} class={style.navBtn} onclick={this.next}>Next</Card.ActionButton>
-					</Card.Actions>
-				</Card>
-			</Swipe>
+				</div>
+				<Card.Actions class={style.cardActions}>
+					<Card.ActionButton disabled={index === 0} class={style.navBtn} onclick={this.previous}>Prev</Card.ActionButton>
+					<PlayerBtn src={`./assets/audio/alphabet/row${pool[index].row}-col${pool[index].col}.m4a`} onEnded={this.audioEnded} />
+					<Card.ActionButton disabled={index === pool.length - 1} class={style.navBtn} onclick={this.next}>Next</Card.ActionButton>
+				</Card.Actions>
+			</Card>
 		);
 	}
 }
