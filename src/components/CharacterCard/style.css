@@ -10,7 +10,8 @@
 	justify-content: center; 
 }
 .characterStyle {
-	font-size: 10em;
+	font-size: 8em;
+	height: 190px;
 }
 .navBtn {
 	margin: 0 10px !important;
