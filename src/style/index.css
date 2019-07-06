@@ -46,3 +46,7 @@ html, body {
 #app .page {
   padding-top: 56px;
 }
+
+#app {
+  --mdc-theme-primary: #BE312D;
+}

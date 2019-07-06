@@ -12,6 +12,9 @@
 	display: flex;
 	justify-content: center;
 }
+.trainingLink {
+	text-decoration: none;
+}
 .text {
 	display: flex;
 	justify-content: center;

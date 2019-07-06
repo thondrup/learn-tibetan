@@ -25,7 +25,7 @@ export default class Home extends Component {
 					Train your memory by trying to recognize random consonants. 
 				</p>
 				<div class={style.btnWrapper}>
-					<Link href="/training">
+					<Link class={style.trainingLink} href="/training">
 						<Button class={style.btn} raised ripple> 
 							Train
 						</Button>
