@@ -6,49 +6,35 @@ import Character from '../Character';
 import 'preact-material-components/Button/style.css';
 import style from './style';
 
-export default class PlayerCard extends Component {
+export default class SimpleCharacterCard extends Component {
   constructor(props) {
     super(props);
     this.state.isPlaying = false;
+    this.state.audioLoaded = false;
   }
-
-  togglePlay() {
-    this.state.isPlaying ? this.stop() : this.play();
-  };
 
   play() {
-    this.audio.load();
-    this.audio.play();     
-  }
-
-  stop() {
-    this.audio.pause();
-    this.audio.currentTime = 0;  
-  }
-
-  audioLoaded() {
-    this.audio.onplay = () => {
-      this.setState({isPlaying: true});
-    };
-
-    this.audio.onpause = () => {
-      this.setState({isPlaying: false});
-    };
+    if(this.state.audioLoaded) {
+      this.audio.load();
+      this.audio.play();  
+    }
   }
 
   componentDidMount() {
     this.audio.onloadedmetadata = () => {
-      this.audioLoaded();
+      this.setState({
+        audioLoaded: true
+      })
     };
   }
 
-  render({src, character}, {isPlaying}) {
+  render({character}) {
     return (
       <Card class={style.cardBody}>
-        <Button class={style.btn} raised ripple onClick={this.togglePlay.bind(this)}> 
+        <Button class={style.btn} raised ripple onClick={this.play.bind(this)}> 
           <Character character={character} characterStyle={style.character} />
           <audio ref={(audio) => { this.audio = audio }}>
-            <source src={src} type="audio/mp4" />
+            <source src={`./assets/audio/alphabet/row${character.row}-col${character.col}.m4a`} type="audio/mp4" />
           </audio>
         </Button> 
       </Card>

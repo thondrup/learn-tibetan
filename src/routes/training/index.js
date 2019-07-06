@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import Button from 'preact-material-components/Button';
-import CharacterCard from '../../components/CharacterCard';
+import CharacterPoolCard from '../../components/CharacterPoolCard';
 import { entries } from 'tibetan-alphabet';
 import style from './style';
 
@@ -45,7 +45,7 @@ export default class Training extends Component {
 						Pronounce the consonant you see, then tap the play button to hear the correct pronunciation. 
 						Tapping the randomize button will give you new random consonants.
 					</p>
-					<CharacterCard pool={this.state.pool} />
+					<CharacterPoolCard pool={this.state.pool} />
 					<div class={style.btnWrapper}>
 						<Button class={style.btn} raised ripple onClick={this.setRandom}> 
 							Randomize

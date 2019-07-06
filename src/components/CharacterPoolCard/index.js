@@ -6,7 +6,7 @@ import Character from '../../components/Character';
 import PlayerBtn from '../../components/PlayerBtn';
 import style from './style';
 
-export default class CharacterCard extends Component {
+export default class CharacterPoolCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
