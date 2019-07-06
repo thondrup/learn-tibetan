@@ -7,32 +7,14 @@ import style from './style';
 export default class PlayerBtn extends Component {
   constructor(props) {
     super(props);
-    this.state.isPlaying = false;
   }
-
-  togglePlay = () => {
-    this.state.isPlaying ? this.stop() : this.play();
-  };
 
   play = () => {
     this.audio.load();
     this.audio.play();     
   }
 
-  stop = () => {
-    this.audio.pause();
-    this.audio.currentTime = 0;  
-  }
-
   audioLoaded = () => {
-    this.audio.onplay = () => {
-      this.setState({isPlaying: true});
-    };
-
-    this.audio.onpause = () => {
-      this.setState({isPlaying: false});
-    };
-
     this.audio.onended = () => {
       this.props.onEnded();
     };
@@ -46,11 +28,8 @@ export default class PlayerBtn extends Component {
 
   render({src}, {isPlaying}) {
     return (
-      <Button class={style.btn} raised ripple onClick={this.togglePlay}> 
-        <Icon class={style.player} 
-          ref={(progress) => { this.progress = progress }}>
-          {isPlaying ? 'stop' : 'play_arrow'}
-        </Icon>
+      <Button class={style.btn} raised ripple onClick={this.play}> 
+        <Icon class={style.player}>play_arrow</Icon>
         <audio ref={(audio) => { this.audio = audio }}>
           <source src={src} type="audio/mp4" />
         </audio>
