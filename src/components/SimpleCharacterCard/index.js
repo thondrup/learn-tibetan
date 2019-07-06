@@ -9,29 +9,17 @@ import style from './style';
 export default class SimpleCharacterCard extends Component {
   constructor(props) {
     super(props);
-    this.state.isPlaying = false;
-    this.state.audioLoaded = false;
   }
 
-  play() {
-    if(this.state.audioLoaded) {
-      this.audio.load();
-      this.audio.play();  
-    }
-  }
-
-  componentDidMount() {
-    this.audio.onloadedmetadata = () => {
-      this.setState({
-        audioLoaded: true
-      })
-    };
+  play = () => {
+    this.audio.load();
+    this.audio.play();  
   }
 
   render({character}) {
     return (
       <Card class={style.cardBody}>
-        <Button class={style.btn} raised ripple onClick={this.play.bind(this)}> 
+        <Button class={style.btn} raised ripple onClick={this.play}> 
           <Character character={character} characterStyle={style.character} />
           <audio ref={(audio) => { this.audio = audio }}>
             <source src={`./assets/audio/alphabet/row${character.row}-col${character.col}.m4a`} type="audio/mp4" />
