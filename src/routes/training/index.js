@@ -42,8 +42,8 @@ export default class Training extends Component {
 				<div class={style.content}>
 					<h2>Random consonants</h2>
 					<p class={style.text}>
-						Try to pronounce the consonant you see. Tap the play button to hear the correct pronunciation 
-						and continue. Tapping the randomize button will give you new random consonants.
+						Pronounce the consonant you see, then tap the play button to hear the correct pronunciation. 
+						Tapping the randomize button will give you new random consonants.
 					</p>
 					<CharacterCard pool={this.state.pool} />
 					<div class={style.btnWrapper}>
