@@ -46,7 +46,7 @@ export default class CharacterCard extends Component {
 
 	render({pool}, {index}) {
 		return (
-			<Card>
+			<Card class={style.card}>
 				<div class={style.cardBody}>
 					<Character character={pool[index]} characterStyle={style.characterStyle} />
 					<div class={style.count}>
