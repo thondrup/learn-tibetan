@@ -1,23 +1,14 @@
 # Learn Tibetan
+Learn the tibetan alphabet. Website can be found at https://learntibetan.netlify.app/
 
-Build using the material template for preact-cli
+## Install
+`npm i`
 
-Super performant `Material` app for preact world using [preact-material-components](https://github.com/prateekbh/preact-material-components)
+## Running in development
+`npm run dev`
 
-## CLI Commands
+## Build for production
+`npm run build`
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# test the production build locally
-npm run serve
-```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+## Test the production build locally
+`npm run serve`
